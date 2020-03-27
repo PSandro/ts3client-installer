@@ -1,0 +1,10 @@
+Package: teamspeak3-client
+Version: 3.0.13.1-1
+Architecture: any
+Maintainer: Sandro Pischinger (PSandro) <sandro@psandro.eu>
+Installed-Size:
+Depends:
+Section: non-free/net
+Priority: optional
+Homepage: https://github.com/PSandro/ts3client-installer
+Description:
