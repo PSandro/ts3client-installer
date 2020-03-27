@@ -10,5 +10,12 @@ mirror=$(echo $versions | jq -r ".linux.$arch.mirrors[\"teamspeak.com\"]")
 
 echo $mirror #Debug
 
+run="teamspeak3client.run"
+
 cd /tmp
-curl -o "teamspeak3client.run" $mirror
+curl -o $run $mirror
+
+bash $run
+mv Teamspeak3-Client-linux_$arch /opt/teamspeak3client #TODO: Check, if foldername ist really Teamspeak3-Client-linux_$arch in any case
+
+rm -f $run

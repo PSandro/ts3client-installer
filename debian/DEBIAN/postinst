@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -s /opt/teamspeak3client/ts3client_runscript.sh /usr/bin/teamspeak3-client
