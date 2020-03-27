@@ -1,8 +1,14 @@
 #!/bin/bash
 arch=`uname -m`
-echo $arch
+echo $arch #Debug
 
 versions=$(curl -sb -H "Accept: application/json" "https://teamspeak.com/versions/client.json")
-versionInfo=$(echo $versions | jq "[.linux.$arch.version, .linux.$arch.checksum, .linux.$arch.mirrors[\"teamspeak.com\"]]")
 
-echo $versionInfo
+version=$(echo $versions | jq -r ".linux.$arch.version")
+checksum=$(echo $versions | jq -r ".linux.$arch.checksum")
+mirror=$(echo $versions | jq -r ".linux.$arch.mirrors[\"teamspeak.com\"]")
+
+echo $mirror #Debug
+
+cd /tmp
+curl -o "teamspeak3client.run" $mirror
