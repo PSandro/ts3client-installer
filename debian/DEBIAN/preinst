@@ -14,7 +14,7 @@ checksum=$(echo $versions | jq -r ".linux.$arch.checksum")
 mirror=$(echo $versions | jq -r ".linux.$arch.mirrors[\"teamspeak.com\"]")
 
 ## Download ##
-echo "Downloading TeamSpeak3 Client $version from for arch $arch"
+echo "Downloading TeamSpeak3 Client $version for architecture $arch"
 run="teamspeak3client.run"
 cd /tmp #enter temp dir
 curl -o $run $mirror #download TeamSpeak3 Client from mirror
