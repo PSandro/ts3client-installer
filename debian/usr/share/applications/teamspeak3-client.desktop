@@ -4,6 +4,6 @@ Type=Application
 Name=Teamspeak3 Client
 Exec=/usr/bin/teamspeak3-client
 Terminal=false
-Icon=/opt/teamspeak3client/styles/default/logo-128x128.png
+Icon=/usr/share/pixmaps/teamspeak3-client.svg
 Categories=Network
 Comment=Teamspeak3 Client
