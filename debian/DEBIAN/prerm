@@ -1,4 +1,4 @@
 #!/bin/bash
 rm -f /usr/bin/teamspeak3client
 
-rm -rf /opt/
+rm -rf /opt/teamspeak3client
