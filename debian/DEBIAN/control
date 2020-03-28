@@ -1,10 +1,10 @@
 Package: teamspeak3-client
 Version: 1.0
-Architecture: any
+Architecture: all
 Maintainer: Sandro Pischinger (PSandro) <sandro@psandro.eu>
 Installed-Size:
 Depends: jq, curl
 Section: non-free/net
 Priority: optional
 Homepage: https://github.com/PSandro/ts3client-installer
-Description:
+Description: VoIP chat for online gaming
