@@ -1,12 +1,6 @@
 #!/bin/bash
 arch=`uname -m`
 
-if [ "$arch" == "x86_64" ]; then
-    dirName="TeamSpeak3-Client-linux_amd64"
-else
-    dirName="TeamSpeak3-Client-linux_x86" #TODO: Check, if foldername ist really Teamspeak3-Client-linux_x86 or rather Teamspeak3-Client-linux_i386
-fi
-
 ## Fetching latest Version ##
 versions=$(curl -sb -H "Accept: application/json" "https://teamspeak.com/versions/client.json")
 version=$(echo $versions | jq -r ".linux.$arch.version")
