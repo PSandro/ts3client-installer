@@ -1,7 +1,7 @@
 #!/bin/bash
 arch=`uname -m`
 
-## Fetching latest Version ##
+## Fetching latest version information ##
 versions=$(curl -sb -H "Accept: application/json" "https://teamspeak.com/versions/client.json")
 version=$(echo $versions | jq -r ".linux.$arch.version")
 checksum=$(echo $versions | jq -r ".linux.$arch.checksum")
@@ -12,6 +12,11 @@ echo "Downloading TeamSpeak3 Client $version for architecture $arch"
 run="teamspeak3client.run"
 cd /tmp #enter temp dir
 curl -o $run $mirror #download TeamSpeak3 Client from mirror
+
+## Integrity
+echo "$checksum $run" | sha256sum --check || { echo 'Integrity check failed. Exiting' ; exit 1; }
+
+## Installation ##
 mkdir -p /opt/ #create /opt/ if not already exists
 bash $run --target /opt/teamspeak3client #unpack TeamSpeak3 client
 rm -f $run #remove temporary file
